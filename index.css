@@ -1,0 +1,78 @@
+body{
+  background-color: hsl(217, 24%, 15%);
+  color: #728dba;
+  transform: scaleX(1) scaleY(1);
+
+}
+
+#cryptocurrencies {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente línea cuando no quepan en el ancho disponible */
+  justify-content: center;
+}
+  
+.cryptocurrencies {
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  width: 40%;
+}
+
+.coin_prices{
+  display: flex;
+}
+
+.price_div{
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+img{
+  color: #728dba;
+}
+
+.cryptocurrencies_header{
+  display: flex;
+  justify-content: center; 
+}
+
+.cryptocurrencies_header h1{
+  margin-left: 1.75%;
+}
+
+.change_div{
+  display: flex;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+
+}
+
+#logo_img{
+  text-align: center;
+  margin: 7.5%;
+}
+
+#logo_img img{
+  width: 400px; /* Adjust the width to your desired size */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* Remove default margin */
+  padding-top: 15%;
+}
+
+.div_chart{
+  margin: 5%;
+  text-align: center;
+}
+
+#coin_name{
+  font-size: 50px;
+}
