@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='indexv2.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <main>
+        <div id="logo_img">
+            <img src="{{ url_for('static', filename='images/nemo-logo.svg') }}" alt="Description of the image">
+            </div>
+        <div id="cryptocurrencies"></div>
+        <div id="div_msg">
+            <h1 id="div_msg_txt">
+                ¡Bienvenidos!
+            </h1>
+        </div>
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+    </main>
+    
+</body>
+</html>

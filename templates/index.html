@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nemo</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
 </head>
 <body>
 
@@ -13,10 +14,10 @@
         <div id="cryptocurrencies"></div>
 
         <div id="logo_img">
-            <img src="imgs/nemo-logo.svg">
+            <img src="{{ url_for('static', filename='images/nemo-logo.svg') }}" alt="Description of the image">
             </div>
         
-        <script src="index.js"></script>
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
 
         <div class="div_chart">
             <canvas id="myChart" ></canvas>

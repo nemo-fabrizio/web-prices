@@ -1,10 +1,14 @@
 body{
   background-color: hsl(217, 24%, 15%);
   color: #728dba;
+  height: 100vh; /* Establecer el alto al 100% de la altura de la ventana */
+  font-family: sans-serif;
 }
 
 main{
   transform: rotate(-90deg);
+  width: 100vh; /* Usar el alto de la ventana como el ancho */
+  height: 100%; /* Usar el 100% del alto de la ventana */
 }
 
 #cryptocurrencies {
@@ -17,7 +21,7 @@ main{
   padding: 10px;
   margin: 5px;
   text-align: center;
-  width: 40%;
+  width: 45%;
 }
 
 .coin_prices{
@@ -39,15 +43,23 @@ img{
 .cryptocurrencies_header{
   display: flex;
   justify-content: center; 
+  font-weight: bold;
+  font-size: 50px;
+
 }
 
 .cryptocurrencies_header h1{
   margin-left: 1.75%;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+h1{
+  font-size: 30px;
 }
 
 .change_div{
   display: flex;
-  font-size: 20px;
   margin: 0;
   padding: 0;
 
@@ -59,24 +71,40 @@ img{
 }
 
 #logo_img img{
-  width: 400px; /* Adjust the width to your desired size */
+  width: 600px; /* Adjust the width to your desired size */
   height: auto; /* Maintain the aspect ratio */
+  padding-bottom: 10%;
 }
 
 body {
   justify-content: center;
   align-items: center;
-  margin: -10%; /* Remove default margin */
-  margin-left: 5%; /* Remove default margin */
-
+  margin-left: 7.5%; /* Remove default margin */
+  margin-top: -5%;
   padding-top: 0;
 }
 
 .div_chart{
-  margin: 5%;
+  margin: 2.5%;
   text-align: center;
 }
 
 #coin_name{
   font-size: 50px;
+}
+
+.price_div h1{
+  text-align: right;
+  margin-right: 15%;
+}
+
+#div_msg{
+  color: white;
+  font-size: 80px;
+  text-align: center;
+}
+
+#div_msg_txt{
+  font-size: 72px;
+
 }

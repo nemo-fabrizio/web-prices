@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     symbols_quotes();
     symbols_graph();
     
-    //setInterval(symbols_quotes, 3000);
+    setInterval(symbols_quotes, 10000);
 });
 
 
@@ -22,20 +22,15 @@ function colorizeChangeText(change) {
 
 function symbols_quotes(){
     const apiKey = 'd6fe2689-fe84-4c24-8694-72795cabfee9';
-    const apiUrl = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest';
+    //const apiUrl = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest';
+    const apiUrl = '/get_crypto_data';
+
     const parameters = {
         'symbol': 'BTC,ETH,USDT,USDC'
     };
-    const url = new URL(apiUrl);
-    url.search = new URLSearchParams(parameters).toString();
+    //url.search = new URLSearchParams(parameters).toString();
 
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'Accepts': 'application/json',
-            'X-CMC_PRO_API_KEY': apiKey,
-        },
-    })
+    fetch(apiUrl)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -57,7 +52,7 @@ function symbols_quotes(){
                     coin_header.classList.add('cryptocurrencies_header');
                     const h1 = document.createElement('h1');
                     const logo = document.createElement('img');
-                    logo.src = `imgs/${symbol}.svg`
+                    logo.src = `static/images/${symbol}.svg`
                     h1.textContent = `${symbol}`;
                     coin_header.appendChild(logo);
                     coin_header.appendChild(h1);
@@ -69,15 +64,15 @@ function symbols_quotes(){
                     const element_change_1h = document.createElement('h1');
                     const element_change_24h = document.createElement('h1');
                     const element_change_7d = document.createElement('h1');
-                    element_data_h1.textContent = `${cryptocurrency.quote.USD.price.toFixed(4)}`;
+                    element_data_h1.textContent = `$${cryptocurrency.quote.USD.price.toFixed(2)}`;
                     element_data_div.appendChild(element_data_h1);
-                    const change_1h = `1h% ${cryptocurrency.quote.USD.percent_change_1h > 0 ? '+' : ''}${cryptocurrency.quote.USD.percent_change_1h.toFixed(4)}`;
+                    const change_1h = `1h% ${cryptocurrency.quote.USD.percent_change_1h > 0 ? '+' : ''}${cryptocurrency.quote.USD.percent_change_1h.toFixed(2)}`;
                     element_change_1h.innerHTML = colorizeChangeText(change_1h);
                     element_change_div.appendChild(element_change_1h);
-                    const change_24h = `1d% ${cryptocurrency.quote.USD.percent_change_24h > 0 ? '+' : ''}${cryptocurrency.quote.USD.percent_change_24h.toFixed(4)}`;
+                    const change_24h = `1d% ${cryptocurrency.quote.USD.percent_change_24h > 0 ? '+' : ''}${cryptocurrency.quote.USD.percent_change_24h.toFixed(2)}`;
                     element_change_24h.innerHTML = colorizeChangeText(change_24h);
                     element_change_div.appendChild(element_change_24h);
-                    const change_7d = `7d% ${cryptocurrency.quote.USD.percent_change_7d > 0 ? '+' : ''}${cryptocurrency.quote.USD.percent_change_7d.toFixed(4)}`;
+                    const change_7d = `7d% ${cryptocurrency.quote.USD.percent_change_7d > 0 ? '+' : ''}${cryptocurrency.quote.USD.percent_change_7d.toFixed(2)}`;
                     element_change_7d.innerHTML = colorizeChangeText(change_7d);
                     element_change_div.appendChild(element_change_7d);
                     element_data_div.classList.add('price_div')
